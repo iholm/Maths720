@@ -1,0 +1,61 @@
+\documentclass[]{article}
+\title{Maths 720 Notes}
+\author{Isabel Holm}
+
+\usepackage{amsmath,amsfonts,amsthm,amssymb,enumitem}
+
+\begin{document}
+	\section{2017 Exam}
+	\begin{enumerate}
+		\item \begin{enumerate}
+			\item Let $G$ be a finite group with a subgroup of finite index $n>1$. Then if $|G|$ does not divide $n!$ then $G$ is not simple.
+			
+			Let $\Omega$ be the set of left cosets of $H$. Consider $\phi$ an action of $G$ under left multiplication on $\Omega$. Consider $K=\ker\phi$. Then $K$ is a normal subgroup of $G$ contained in $H$. $G/K$ is isomorphic to a subgroup of $Sym(\Omega)$ which has order $n!$. So $|G:K|$ is finite and divides $n!$. As $G$ does not divide $n!$, $K$ cannot be trivial, and so $G$ is not simple. 
+			\item (Assignment 2) Let $G$ be a group of order 400. Let $n_2(G)$ be the number of Sylow 2-groups and $n_5(G)$ be the number of of Sylow 5-groups. We know that $n_5(G)$ is $1$ or $16$ as $n_p(G)\cong 1\mod p$. If $n_5(G)=1$ then we are done, so suppose $n_5(G)=16$.
+			
+			Suppose the intersection of Sylow 5-subgroups is always trivial. Then there are $24*16=384$ nontrivial elements, and so there must be a unique (and hence normal) Sylow 2-subgroup.
+			
+			If there are Sylow 5-subgroups $P$ and $Q$ such that their intersection is not trivial, then $|P\cap Q|=5$. But $|PQ|=125$ and $PQ\subseteq N_G(P\cap Q)$ since $P\cap Q$ is normal in each of $P$ and $Q$. So $|N_G(P\cap Q)|>125$ and is a divisor of 400, therefore $|G:N_G(P\cap Q)|<4$. As $|G|$ does not divide $3!$, $P\cap Q\vartriangleleft G$.
+			\item We can present $Q_8$ as $Q_8=\langle x,y:x^2=y^2,(xy)^2=y^2\rangle$. This has a unique element of order 2, so every subgroup of $Q_8$ of order 4 must be cyclic and have $x^2$ as its element of order 2. So the intersection of any subgroup of order 4 and any subgroup of order 2 is nontrivial.
+		\end{enumerate}
+		\item \begin{enumerate}
+			\item Theorem: Take a group action $(G,\Omega, \cdot)$. Then let $O_\alpha$ be the orbit of $\alpha\in \Omega$ under $\cdot$. Let $H=G_\alpha$ be the stabiliser of $\alpha$ in $G$. Then there exists a bijection \[O_\alpha \leftrightarrow \{G_\alpha x:x\in G \} \] 
+			\textit{Proof}: Define $f:O_\alpha \to \{Hx:x\in G \}$ be the following: take $\beta\in O_\alpha$ and choose $x\in G$ with $\beta =\alpha\cdot x$, and then give \[f(\beta)=Hx \] First consider that if $f(\beta)=Hy$, then we can show that $Hy=Hx$, so $f$ is well defined. Then consider \[Hx=f(\alpha\cdot x) \] so $f$ is onto. Lastly, take $f(\beta)=f(\gamma)$. Then $\beta = \alpha\cdot x $ and $\gamma=\alpha\cdot y$, so $Hx=Hy$ and thus $y=hx$ for some $h\in H$. Then \[\gamma=\alpha\cdot y=\alpha\cdot(hx)=(\alpha\cdot h)\cdot x=\alpha\cdot x=\beta \] as $h\in H$. Thus $f$ is also injective, and thus the theorem is proved.
+			\item Let $H$ and $K$ be soluble normal subgroups of a finite group $G$. Then $HK$ is a soluble normal subgroup of $G$. Clearly $HK$ is a normal subgroup, so we are left with showing that it is soluble. Then $HK/H\simeq K/(K\cap H)$. As this is a factor group of a soluble group, $HK/H$ is soluble, as is $H$, so $HK$ is soluble.
+			
+			\item Let $G$ be a finite group. Then $G$ has a largest soluble normal subgroup. Let $N$ be a soluble normal subgroup of $G$. If it is not maximal, then $\exists M$ such that $N<M<G$ and $M$ is a soluble normal subgroup of $G$. But then $MN$ is a soluble normal subgroup of $G$. If $MN$ is not maximal, then we can repeat this process. As $G$ is finite, this process must end somewhere, and hence there is a largest soluble normal subgroup. It is unique, as if $M,N$ are both the largest soluble normal subgroups of $G$, then $MN$ is also a soluble normal subgroup that is larger than both if they are not equal. Hence $M=N$.
+		\end{enumerate}
+		\item %question 3 2017
+		\begin{enumerate}
+			\item A group $G$ is residually finite if, for all $x\in G\backslash \{1\}$, there exists a normal group $N_x$ in $G$ such that $x\not\in N_x$ and $|G:N_x|<\infty$.
+			\item Let $x\in \mathbb{Z}^n$ where $x$ is not the identity. We can write $x=\{x_1, x_2,...,x_n \}$. For each $x_i$ with $1\leq i\leq n$ we can take $p_i$ such that $p_i$ is not a divisor of $x_i$. Then we can take the direct product of $p_i\mathbb{Z}$ for $1\leq i\leq n$, which is a subgroup of $\mathbb{Z}^n$ which is normal as $\mathbb{Z}^n$ is abelian. Thus $\mathbb{Z}^n$ is residually finite for %do this but with induction instead
+			\item For $\mathbb{Q}$ to be residually finite, it must have a proper subgroup of finite index. Let $H$ be a subgroup of $\mathbb{Q}$, with $[\mathbb{Q}:H]=n$. Then $nq\in H$ for every $q\in \mathbb{Q}$. But then $\mathbb{Q}=H$ and so it is not a proper subgroup.
+		\end{enumerate}
+		\item %question 4 2017
+		\begin{enumerate}
+			\item Let $F_n$ and $F_m$ be isomorphic. Let $G=\langle g:g^2=1\rangle$. Consider a homomorphism $\phi: F_m\to G$. This is completely determined by the images of each $x_i\in F_m$ - either $x_i\mapsto g$ or $x_i\mapsto g^0=1$. Thus the number of nontrivial homomorphisms from $F_m$ to $G$ is $2^m-1$. Then $K=\ker\phi\vartriangleleft F_m$ and $F_m/K\simeq \mathbb{Z}_2$ by the first isomorphism theorem. Every normal subgroup of index 2 is of the form $\ker\phi$ for some non-trivial $\phi$. Thus $F_m$ has $2^m-1$ normal subgroups of index 2. Similarly, $F_n$ has $2^n-1$ subgroups of index 2. Thus as $F_m\simeq F_n$, $2^m-1=2^n-1$ and hence $m=n$.
+			\item Let $G=\langle x,y|x^7=y^5=1,[x,y]=x\rangle$. Show that $G$ is cyclic of order 5. We can rewrite $[x,y]=x$ as $x^y=x^2$. Then, since $y^6=y$, $x^2=x^y=x^{y^6}=x^{2^6}$ and so $x^62=1$. Then the order of $x$ in $G$ divides both 7 and 62, and so $x=1$. Thus, $G=\langle y\rangle$ has order dividing 5. By von Dyck's theorem, $G$ maps onto $\mathbb{Z}_5$ via $x\mapsto 0$, $y\mapsto 1$ and so $G\cong \mathbb{Z}_5$.
+			\item Assignment Q
+		\end{enumerate}
+		\item %question 5 2017
+		\begin{enumerate}
+			\item Suppose the elements of $S_n$ act on at least the elements $i,j,k$. Let $\pi\in S_n$ such that $\pi(i)=j$. Now we can find a $\rho\in S_n$ such that $\rho(j)=k$ but fixes every other element. But then $\rho^{-1}\pi\rho(i)=k$, so $\pi$ is not in the center of $S_n$ As $\pi$ can be any non-trivial element of $S_n$, then $Z(S_n)=\{1 \}$
+			\item Let $N\vartriangleleft S_n$. 
+			\item We can take $\mathbb{Z}_2\times\mathbb{Z}_2$ given as a subgroup of $S_4$ by the elements $\{(), (1,3)(2,4),(1,2)(3,4),(1,4)(2,3) \}$. This is all elements that are the products of two disjoint transpositions. As conjugation in $S_n$ does not change cycle structure, this subgroup is normal in $S_n$.
+		\end{enumerate}
+		\item \begin{enumerate}
+			\item 
+			\item First we show that $G$ has exactly one element of order 2. Then the Sylow 2-subgroup is unique and hence normal.
+			\item \begin{enumerate}
+				\item Clearly $b$ commutes with both $a$ and $c$ as they are disjoint. Thus the two commutators we care about are (1,5)(2,6)(2,6,5)(1,5)(2,6)(2,5,6)=(1,2)(5,6) and (2,6,5)(1,5)(2,6)(2,5,6)(1,5)(2,6)=(1,2)(5,6), so the derived group is the normal closure of $\{(1,2)(5,6)\}$, which is $G'=\{(),(1,2)(5,6),(1,5)(2,6),(1,6)(2,5)\}$ (a representation of the Klein 4-group). Then $G^{(2)}$ is $\{1\}$, and so we are done.
+				\item We attempt to take the lower central series of $G$. The third term, $G_3=[G',G]$ must contain $G'$, and hence cannot be a proper normal subgroup of $G'$. Thus, this series will never terminate and $G$ is not nilpotent. 
+			\end{enumerate}
+		\end{enumerate}
+	\end{enumerate}
+	\section{2016}
+	Taught by Jianbei - not representative of our exam
+	\section{2015}
+	\begin{enumerate}
+		\item 
+	\end{enumerate}
+\end{document}
